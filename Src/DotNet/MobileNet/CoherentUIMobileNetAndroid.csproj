@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Coherent.UI.Mobile</RootNamespace>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\Build\Android\Debug\</OutputPath>
+    <DefineConstants>DEBUG;COHERENT_PLATFORM_ANDROID;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Debug/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+    <AssemblyName>CoherentUIMobileNetAndroid</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\..\..\Build\Android\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <DefineConstants>COHERENT_PLATFORM_ANDROID;</DefineConstants>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Release/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+    <DebugSymbols>True</DebugSymbols>
+    <AssemblyName>CoherentUIMobileNet</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug UnityProject|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\UnityIntegration\Assets\Plugins</OutputPath>
+    <DefineConstants>DEBUG;COHERENT_PLATFORM_ANDROID;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Debug/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+    <AssemblyName>CoherentUIMobileNetAndroid</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binding\Mobile\ArrayReader.cs">
+      <Link>Binding\Android\ArrayReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Binder_Mobile.cs">
+      <Link>Binding\Android\Binder_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\DictionaryReader.cs">
+      <Link>Binding\Android\DictionaryReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\DynamicCode_Mobile.cs">
+      <Link>Binding\Android\DynamicCode_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Exporter_Mobile.cs">
+      <Link>Binding\Android\Exporter_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\ImporterExtensions.cs">
+      <Link>Binding\Android\ImporterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Importer_Mobile.cs">
+      <Link>Binding\Android\Importer_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\ListReader.cs">
+      <Link>Binding\Android\ListReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\UserDefinedTypes_Mobile.cs">
+      <Link>Binding\Android\UserDefinedTypes_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\CoherentUI_Native.cs">
+      <Link>swig\CoherentUI_Native.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\CoherentUI_NativePINVOKE.cs">
+      <Link>swig\CoherentUI_NativePINVOKE.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\DotNetBinder.cs">
+      <Link>swig\DotNetBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\DownloadErrorType.cs">
+      <Link>swig\DownloadErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\EventListener.cs">
+      <Link>swig\EventListener.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\FileHandler.cs">
+      <Link>swig\FileHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ILogHandler.cs">
+      <Link>swig\ILogHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ResourceResponse.cs">
+      <Link>swig\ResourceResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ScriptCallErrorType.cs">
+      <Link>swig\ScriptCallErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\Severity.cs">
+      <Link>swig\Severity.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\SystemError.cs">
+      <Link>swig\SystemError.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\SystemErrorType.cs">
+      <Link>swig\SystemErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\SystemSettings.cs">
+      <Link>swig\SystemSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\UISystem.cs">
+      <Link>swig\UISystem.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\URLResponse.cs">
+      <Link>swig\URLResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\View.cs">
+      <Link>swig\View.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewError.cs">
+      <Link>swig\ViewError.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewErrorType.cs">
+      <Link>swig\ViewErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewInfo.cs">
+      <Link>swig\ViewInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewInputState.cs">
+      <Link>swig\ViewInputState.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewListener.cs">
+      <Link>swig\ViewListener.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\Android\ViewListenerBase.cs">
+      <Link>swig\ViewListenerBase.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="UnmanagedReference.cs">
+      <Link>UnmanagedReference.cs</Link>
+    </Compile>
+    <Compile Include="HTTPHeader.cs">
+      <Link>HTTPHeader.cs</Link>
+    </Compile>
+    <Compile Include="CoherentNativeDLL.cs">
+      <Link>CoherentNativeDLL.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binding.cs">
+      <Link>Binding\Binding.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binder.cs">
+      <Link>Binding\Binder.cs</Link>
+    </Compile>
+    <Compile Include="Binding\BlobReader.cs">
+      <Link>Binding\BlobReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\BlobWriter.cs">
+      <Link>Binding\BlobWriter.cs</Link>
+    </Compile>
+    <Compile Include="Binding\CoherentProperty.cs">
+      <Link>Binding\CoherentProperty.cs</Link>
+    </Compile>
+    <Compile Include="Binding\CoherentType.cs">
+      <Link>Binding\CoherentType.cs</Link>
+    </Compile>
+    <Compile Include="Binding\UnsupportedPrimitiveTypeException.cs">
+      <Link>Binding\UnsupportedPrimitiveTypeException.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Value.cs">
+      <Link>Binding\Value.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binding_AOT.cs" />
+    <Compile Include="MonoPInvokeCallback.cs">
+      <Link>MonoPInvokeCallback.cs</Link>
+    </Compile>
+    <Compile Include="Binding\UserDefinedTypesSupport.cs">
+      <Link>Binding\UserDefinedTypesSupport.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Exceptions.cs">
+      <Link>Binding\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="PlatformDetector.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+</Project>

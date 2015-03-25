@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Coherent.UI.Mobile</RootNamespace>
+    <AssemblyName>CoherentUIMobileNet</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build\iOS\Debug</OutputPath>
+    <DefineConstants>COHERENT_PLATFORM_IOS;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Debug/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Build\iOS\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>COHERENT_PLATFORM_IOS;</DefineConstants>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Release/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug UnityProject|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\UnityIntegration\Assets\Plugins</OutputPath>
+    <DefineConstants>COHERENT_PLATFORM_IOS;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="/Library/Frameworks/Mono.framework/Versions/Current/bin/mono ../../../ThirdParty/AOT-Compatlyzer/AOTCompatlyzer/bin/Debug/AOTCompatlyzer.exe ${TargetFile}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binding\Mobile\ArrayReader.cs">
+      <Link>Binding\iOS\ArrayReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Binder_Mobile.cs">
+      <Link>Binding\iOS\Binder_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\DictionaryReader.cs">
+      <Link>Binding\iOS\DictionaryReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\DynamicCode_Mobile.cs">
+      <Link>Binding\iOS\DynamicCode_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Exporter_Mobile.cs">
+      <Link>Binding\iOS\Exporter_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\ImporterExtensions.cs">
+      <Link>Binding\iOS\ImporterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\Importer_Mobile.cs">
+      <Link>Binding\iOS\Importer_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\ListReader.cs">
+      <Link>Binding\iOS\ListReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Mobile\UserDefinedTypes_Mobile.cs">
+      <Link>Binding\iOS\UserDefinedTypes_Mobile.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="..\swig\iOS\DownloadErrorType.cs">
+      <Link>DownloadErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\EventListener.cs">
+      <Link>EventListener.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ILogHandler.cs">
+      <Link>ILogHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ScriptCallErrorType.cs">
+      <Link>ScriptCallErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\Severity.cs">
+      <Link>Severity.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\SystemError.cs">
+      <Link>SystemError.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\SystemErrorType.cs">
+      <Link>SystemErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\SystemSettings.cs">
+      <Link>SystemSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\UISystem.cs">
+      <Link>UISystem.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\URLResponse.cs">
+      <Link>URLResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\View.cs">
+      <Link>View.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewError.cs">
+      <Link>ViewError.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewErrorType.cs">
+      <Link>ViewErrorType.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewInfo.cs">
+      <Link>ViewInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewListener.cs">
+      <Link>ViewListener.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewListenerBase.cs">
+      <Link>ViewListenerBase.cs</Link>
+    </Compile>
+    <Compile Include="UnmanagedReference.cs">
+      <Link>UnmanagedReference.cs</Link>
+    </Compile>
+    <Compile Include="HTTPHeader.cs">
+      <Link>HTTPHeader.cs</Link>
+    </Compile>
+    <Compile Include="CoherentNativeDLL.cs">
+      <Link>CoherentNativeDLL.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ViewInputState.cs">
+      <Link>ViewInputState.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\CoherentUI_Native.cs">
+      <Link>CoherentUI_Native.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\CoherentUI_NativePINVOKE.cs">
+      <Link>CoherentUI_NativePINVOKE.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\FileHandler.cs">
+      <Link>FileHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\swig\iOS\ResourceResponse.cs">
+      <Link>ResourceResponse.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binding.cs">
+      <Link>Binding\Binding.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binder.cs">
+      <Link>Binding\Binder.cs</Link>
+    </Compile>
+    <Compile Include="Binding\BlobReader.cs">
+      <Link>Binding\BlobReader.cs</Link>
+    </Compile>
+    <Compile Include="Binding\BlobWriter.cs">
+      <Link>Binding\BlobWriter.cs</Link>
+    </Compile>
+    <Compile Include="Binding\CoherentProperty.cs">
+      <Link>Binding\CoherentProperty.cs</Link>
+    </Compile>
+    <Compile Include="Binding\CoherentType.cs">
+      <Link>Binding\CoherentType.cs</Link>
+    </Compile>
+    <Compile Include="Binding\UnsupportedPrimitiveTypeException.cs">
+      <Link>Binding\UnsupportedPrimitiveTypeException.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Value.cs">
+      <Link>Binding\Value.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Binding_AOT.cs" />
+    <Compile Include="..\swig\iOS\DotNetBinder.cs">
+      <Link>DotNetBinder.cs</Link>
+    </Compile>
+    <Compile Include="MonoPInvokeCallback.cs">
+      <Link>MonoPInvokeCallback.cs</Link>
+    </Compile>
+    <Compile Include="Binding\UserDefinedTypesSupport.cs">
+      <Link>Binding\UserDefinedTypesSupport.cs</Link>
+    </Compile>
+    <Compile Include="Binding\Exceptions.cs">
+      <Link>Binding\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="PlatformDetector.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ThirdParty\AOT-Compatlyzer\AOTCompatlyzer\AOTCompatlyzer.csproj">
+      <Project>{AE9F450D-4023-4E66-9FB1-701DDE2FB2A4}</Project>
+      <Name>AOTCompatlyzer</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

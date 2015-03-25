@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>Coherent UI Demo</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="css/coherent.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="help-text">Press to show/hide the overlay</div>
+<div id="toggle-mouse">Press to toggle mouse look</div>
+<div id="menu">
+	<div id="menu-left" class="submenu-level1">
+		<div id="menu-left-top" class="submenu-level2">Enable input forwarding</div>
+		<div id="menu-left-middle" class="submenu-level2">Bump box!</div>
+		<div id="menu-left-bottom" class="submenu-level2">Disable input forwarding</div>
+	</div>
+	<div id="menu-right" class="submenu-level1 coui-inputcallback">
+		<span>Test clicks in this area</span>
+		<br/><br/>
+		<span id="menu-right-info"></span>
+	</div>
+</div>
+
+<div id="debug" style="position: absolute; bottom: -30px"></div>
+    <!-- js -->
+    <script type="text/javascript" src="javascript/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="javascript/jquery.mobile-1.3.1.min.js"></script>
+	<script>
+		$.mobile.loadingMessage = false;
+	</script>
+	
+	<script type="text/javascript" src="javascript/coherent.js"></script>
+	
+	<script type="text/javascript">
+		var enableInputForwarding = function() {
+			// If an element has the "coui-noinput" class,
+			// all input is directly sent to the client.
+			$('#menu-right').addClass("coui-noinput");
+			$('#menu-right-info').text("<Clicks are forwarded - smash the box!>");
+		};
+		
+		var disableInputForwarding = function() {
+			// If an element doesn't have the "coui-noinput" class,
+			// but has a "coui-inputcallback" class, its "couiInputCallback" determines
+			// whether the input is forwarded or consumed. If the element has neither
+			// of the classes, the input is consumed.
+			$('#menu-right').removeClass("coui-noinput");
+			$('#menu-right-info').text("<Clicks are consumed>");
+		};
+		
+		var toggleOverlayMenu = function() {
+			$('#menu').toggle();
+		};
+	
+		$('#menu-left-top').tap(function() {
+			enableInputForwarding();
+		});
+		
+		$('#menu-left-bottom').tap(function() {
+			disableInputForwarding();
+		});
+		
+		$('#help-text').tap(function() {
+			toggleOverlayMenu();
+		});
+		
+		$('#menu-left-middle').tap(function(event) {
+			engine.call('BumpBox', 256);
+		});
+		
+		$('#toggle-mouse').tap(function() {
+			engine.call('ToggleMouseLook');
+		});
+		
+		engine.on('Ready', function () {
+			var inputSink = document.getElementById("menu-right");
+			inputSink.couiInputCallback = function (x, y) {
+				// A simple handler - regardless of the position within the element,
+				// we always consume the click (this would happen even if we
+				// don't assign the couiInputCallback funtion, but we're doing
+				// it anyway for the sake of the example).
+				return true;
+			}
+			
+			enableInputForwarding();
+		});
+		
+		$(document).bind('pageinit', function() {
+			var $body = $('body');
+
+			var setBodyScale = function() {
+				var scaleFactor = 0.0002,
+					scaleSource = $(window).height(),
+					scaleSource2 = $(window).width(),
+					maxScale = 170,
+					minScale = 70;
+
+				var fontSize = (scaleSource * scaleSource2) * scaleFactor;
+
+				if (fontSize > maxScale) fontSize = maxScale;
+				if (fontSize < minScale) fontSize = minScale;
+
+				$('body').css('font-size', fontSize + '%');
+			}
+
+			$(window).resize(function(){
+				setBodyScale();
+			});
+
+			// Set scale when the document is ready
+			setBodyScale();
+		});
+	</script>
+</body>
+</html>

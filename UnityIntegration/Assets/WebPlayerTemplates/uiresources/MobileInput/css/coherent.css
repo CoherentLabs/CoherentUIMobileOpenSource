@@ -1,0 +1,97 @@
+body
+{
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	-webkit-perspective: preserve-3d;
+}
+
+div
+{
+	-webkit-user-select: none;
+}
+
+#help-text, #toggle-mouse
+{
+	position: absolute;
+	border-width: 1px;
+	border-color: #000;
+	border-style: solid;
+	background-color: rgba(67, 42, 89, 0.2);
+}
+
+#toggle-mouse
+{
+	top: 40px;
+}
+
+#menu
+{
+	position: absolute;
+	background-color: rgba(34, 20, 34, 0.6);
+	width: 80%;
+	height: 80%;
+	top: 10%;
+	left: 10%;
+}
+
+.submenu-level1
+{
+	position: absolute;
+	border-width: 1px;
+	border-color: #fff;
+	border-style: solid;
+	width: 40%;
+	height: 80%;
+}
+
+#menu-left
+{
+	top: 10%;
+	left: 5%;
+}
+
+#menu-right
+{
+	top: 10%;
+	left: 55%;
+	
+	color: #fff;
+	text-align: center;
+}
+
+#menu-right > *
+{
+	pointer-events: none;s
+}
+
+.submenu-level2
+{
+	position: absolute;
+	border-width: 1px;
+	border-color: #fff;
+	border-style: solid;
+	width: 80%;
+	height: 25%;
+	
+	color: #fff;
+	text-align: center;
+}
+
+#menu-left-top
+{
+	top: 5%;
+	left: 10%;
+}
+
+#menu-left-middle
+{
+	top: 35%;
+	left: 10%
+}
+
+#menu-left-bottom
+{
+	top: 65%;
+	left: 10%
+}

@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\swig\Android\CoherentUI_NativePINVOKE.cs">
+    <Files>
+      <File FileName="CoherentNativeDLL.cs" Line="37" Column="37" />
+      <File FileName="AssemblyInfo.cs" Line="49" Column="36" />
+      <File FileName="..\swig\Android\CoherentUI_Native.cs" Line="33" Column="83" />
+      <File FileName="UnmanagedReference.cs" Line="42" Column="66" />
+      <File FileName="..\swig\Android\CoherentUI_NativePINVOKE.cs" Line="37" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

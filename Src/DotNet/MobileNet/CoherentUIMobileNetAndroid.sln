@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoherentUIMobileNetAndroid", "CoherentUIMobileNetAndroid.csproj", "{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug UnityProject|Any CPU = Debug UnityProject|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Debug UnityProject|Any CPU.ActiveCfg = Debug UnityProject|Any CPU
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Debug UnityProject|Any CPU.Build.0 = Debug UnityProject|Any CPU
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3CEBA0-FA77-4E17-B655-08A278F5B2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CoherentUIMobileNetAndroid.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		017B37F9172ADA9200379893 /* libBinding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 017B37F6172ADA7C00379893 /* libBinding.a */; };
+		017B380D172ADF9F00379893 /* BinderiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 017B380C172ADF9F00379893 /* BinderiOS.mm */; };
+		1924B6161720590600175A63 /* DummyUnityBuild.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1924B6151720590600175A63 /* DummyUnityBuild.mm */; };
+		1924B61717205D0300175A63 /* UISystem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19928DFB171C5D2F00A96B8B /* UISystem.mm */; };
+		1924B6191720605300175A63 /* ManagedReferences.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1924B6181720605300175A63 /* ManagedReferences.mm */; };
+		1929925E171E98A100872498 /* ViewImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1929925D171E98A100872498 /* ViewImpl.mm */; };
+		19928D9C171C484100A96B8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19928D9B171C484100A96B8B /* Foundation.framework */; };
+		19EDC67717267DF000D30008 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EDC67517267C5D00D30008 /* MobileCoreServices.framework */; };
+		19EDC68217268A1800D30008 /* ResourceResponseImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19EDC68017268A1800D30008 /* ResourceResponseImpl.mm */; };
+		19F0AA02171D4D72002B41BD /* libLogging_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F0A9FF171D4D62002B41BD /* libLogging_iOS.a */; };
+		19F0AA38171D50C1002B41BD /* libMemoryManagement_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F0AA35171D50B2002B41BD /* libMemoryManagement_iOS.a */; };
+		19F0AA3E171D5FF3002B41BD /* precompiled.mm in Sources */ = {isa = PBXBuildFile; fileRef = 19F0AA3C171D5FF3002B41BD /* precompiled.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		017B37F5172ADA7C00379893 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 017B37F1172ADA7B00379893 /* Binding.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 01352BBB172ACBD00077C8B2;
+			remoteInfo = Binding;
+		};
+		017B37F7172ADA8400379893 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 017B37F1172ADA7B00379893 /* Binding.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 01352BBA172ACBD00077C8B2;
+			remoteInfo = Binding;
+		};
+		19F0A9FE171D4D62002B41BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19F0A9FA171D4D62002B41BD /* Logging_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19F0A996171D4590002B41BD;
+			remoteInfo = Logging_iOS;
+		};
+		19F0AA00171D4D6D002B41BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19F0A9FA171D4D62002B41BD /* Logging_iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 19F0A995171D4590002B41BD;
+			remoteInfo = Logging_iOS;
+		};
+		19F0AA34171D50B2002B41BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19F0AA30171D50B2002B41BD /* MemoryManagement_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19F0AA0E171D4F1A002B41BD;
+			remoteInfo = MemoryManagement_iOS;
+		};
+		19F0AA36171D50BE002B41BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19F0AA30171D50B2002B41BD /* MemoryManagement_iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 19F0AA0D171D4F1A002B41BD;
+			remoteInfo = MemoryManagement_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19928D96171C484100A96B8B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		017B37F1172ADA7B00379893 /* Binding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Binding.xcodeproj; path = ../iOS/Binding/Binding.xcodeproj; sourceTree = "<group>"; };
+		017B380B172ADF9F00379893 /* BinderiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BinderiOS.h; path = ../iOS/BinderiOS.h; sourceTree = "<group>"; };
+		017B380C172ADF9F00379893 /* BinderiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BinderiOS.mm; path = ../iOS/BinderiOS.mm; sourceTree = "<group>"; usesTabs = 1; };
+		1924B60E17203A9F00175A63 /* ManagedReferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagedReferences.h; path = ../iOS/ManagedReferences.h; sourceTree = "<group>"; };
+		1924B6151720590600175A63 /* DummyUnityBuild.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DummyUnityBuild.mm; path = ../iOS/DummyUnityBuild.mm; sourceTree = "<group>"; };
+		1924B6181720605300175A63 /* ManagedReferences.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ManagedReferences.mm; path = ../iOS/ManagedReferences.mm; sourceTree = "<group>"; };
+		1929925B171E97AE00872498 /* ViewListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewListener.h; path = ../ViewListener.h; sourceTree = "<group>"; };
+		1929925C171E987400872498 /* ViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewImpl.h; path = ../iOS/ViewImpl.h; sourceTree = "<group>"; };
+		1929925D171E98A100872498 /* ViewImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewImpl.mm; path = ../iOS/ViewImpl.mm; sourceTree = "<group>"; };
+		1929925F171EA2F600872498 /* ViewObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewObserver.h; path = ../iOS/ViewObserver.h; sourceTree = "<group>"; };
+		19928D98171C484100A96B8B /* libCoherentUIMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoherentUIMobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		19928D9B171C484100A96B8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		19928DF6171C548500A96B8B /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = View.h; path = ../View.h; sourceTree = "<group>"; };
+		19928DF7171C568300A96B8B /* ViewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewInfo.h; path = ../ViewInfo.h; sourceTree = "<group>"; };
+		19928DF8171C572400A96B8B /* Declarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Declarations.h; path = ../Declarations.h; sourceTree = "<group>"; };
+		19928DFA171C5B2200A96B8B /* UISystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISystem.h; path = ../UISystem.h; sourceTree = "<group>"; };
+		19928DFB171C5D2F00A96B8B /* UISystem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = UISystem.mm; path = ../iOS/UISystem.mm; sourceTree = "<group>"; };
+		19EDC67517267C5D00D30008 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		19EDC67C1726845F00D30008 /* FileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHandler.h; path = ../FileHandler.h; sourceTree = "<group>"; };
+		19EDC68017268A1800D30008 /* ResourceResponseImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ResourceResponseImpl.mm; path = ../iOS/ResourceResponseImpl.mm; sourceTree = "<group>"; };
+		19EDC68117268A1800D30008 /* ResourceResponseImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceResponseImpl.h; path = ../iOS/ResourceResponseImpl.h; sourceTree = "<group>"; };
+		19F0A9FA171D4D62002B41BD /* Logging_iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Logging_iOS.xcodeproj; sourceTree = "<group>"; };
+		19F0AA30171D50B2002B41BD /* MemoryManagement_iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MemoryManagement_iOS.xcodeproj; sourceTree = "<group>"; };
+		19F0AA3C171D5FF3002B41BD /* precompiled.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = precompiled.mm; path = ../iOS/precompiled.mm; sourceTree = "<group>"; };
+		19F0AA3D171D5FF3002B41BD /* precompiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = precompiled.h; path = ../iOS/precompiled.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19928D95171C484100A96B8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19EDC67717267DF000D30008 /* MobileCoreServices.framework in Frameworks */,
+				017B37F9172ADA9200379893 /* libBinding.a in Frameworks */,
+				19F0AA38171D50C1002B41BD /* libMemoryManagement_iOS.a in Frameworks */,
+				19F0AA02171D4D72002B41BD /* libLogging_iOS.a in Frameworks */,
+				19928D9C171C484100A96B8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		017B37F0172ADA6900379893 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				017B37F1172ADA7B00379893 /* Binding.xcodeproj */,
+			);
+			name = Binding;
+			sourceTree = "<group>";
+		};
+		017B37F2172ADA7B00379893 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				017B37F6172ADA7C00379893 /* libBinding.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19928D8F171C484100A96B8B = {
+			isa = PBXGroup;
+			children = (
+				017B37F0172ADA6900379893 /* Binding */,
+				19F0AA2F171D50B2002B41BD /* MemoryManagement_iOS */,
+				19F0A98C171D3BCA002B41BD /* iOS */,
+				19928DFA171C5B2200A96B8B /* UISystem.h */,
+				19928DF8171C572400A96B8B /* Declarations.h */,
+				19928DF7171C568300A96B8B /* ViewInfo.h */,
+				19928DF6171C548500A96B8B /* View.h */,
+				1929925B171E97AE00872498 /* ViewListener.h */,
+				19EDC67C1726845F00D30008 /* FileHandler.h */,
+				19928D9D171C484100A96B8B /* CoherentUIMobile */,
+				19928D9A171C484100A96B8B /* Frameworks */,
+				19928D99171C484100A96B8B /* Products */,
+				19F0A9F9171D4D62002B41BD /* Logging_iOS */,
+			);
+			sourceTree = "<group>";
+		};
+		19928D99171C484100A96B8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19928D98171C484100A96B8B /* libCoherentUIMobile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19928D9A171C484100A96B8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19EDC67517267C5D00D30008 /* MobileCoreServices.framework */,
+				19928D9B171C484100A96B8B /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19928D9D171C484100A96B8B /* CoherentUIMobile */ = {
+			isa = PBXGroup;
+			children = (
+				19928D9E171C484100A96B8B /* Supporting Files */,
+			);
+			path = CoherentUIMobile;
+			sourceTree = "<group>";
+		};
+		19928D9E171C484100A96B8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19F0A98C171D3BCA002B41BD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				017B380B172ADF9F00379893 /* BinderiOS.h */,
+				017B380C172ADF9F00379893 /* BinderiOS.mm */,
+				1924B6181720605300175A63 /* ManagedReferences.mm */,
+				1924B60E17203A9F00175A63 /* ManagedReferences.h */,
+				1929925D171E98A100872498 /* ViewImpl.mm */,
+				1929925C171E987400872498 /* ViewImpl.h */,
+				19928DFB171C5D2F00A96B8B /* UISystem.mm */,
+				19F0AA3C171D5FF3002B41BD /* precompiled.mm */,
+				19F0AA3D171D5FF3002B41BD /* precompiled.h */,
+				1929925F171EA2F600872498 /* ViewObserver.h */,
+				1924B6151720590600175A63 /* DummyUnityBuild.mm */,
+				19EDC68017268A1800D30008 /* ResourceResponseImpl.mm */,
+				19EDC68117268A1800D30008 /* ResourceResponseImpl.h */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		19F0A9F9171D4D62002B41BD /* Logging_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				19F0A9FA171D4D62002B41BD /* Logging_iOS.xcodeproj */,
+			);
+			name = Logging_iOS;
+			path = ../../../Libraries/Logging/Logging_iOS;
+			sourceTree = "<group>";
+		};
+		19F0A9FB171D4D62002B41BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F0A9FF171D4D62002B41BD /* libLogging_iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19F0AA2F171D50B2002B41BD /* MemoryManagement_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				19F0AA30171D50B2002B41BD /* MemoryManagement_iOS.xcodeproj */,
+			);
+			name = MemoryManagement_iOS;
+			path = ../../../Libraries/MemoryManagement/MemoryManagement_iOS;
+			sourceTree = "<group>";
+		};
+		19F0AA31171D50B2002B41BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19F0AA35171D50B2002B41BD /* libMemoryManagement_iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19928D97171C484100A96B8B /* CoherentUIMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19928DA6171C484100A96B8B /* Build configuration list for PBXNativeTarget "CoherentUIMobile" */;
+			buildPhases = (
+				19928D94171C484100A96B8B /* Sources */,
+				19928D95171C484100A96B8B /* Frameworks */,
+				19928D96171C484100A96B8B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				017B37F8172ADA8400379893 /* PBXTargetDependency */,
+				19F0AA37171D50BE002B41BD /* PBXTargetDependency */,
+				19F0AA01171D4D6D002B41BD /* PBXTargetDependency */,
+			);
+			name = CoherentUIMobile;
+			productName = CoherentUIMobile;
+			productReference = 19928D98171C484100A96B8B /* libCoherentUIMobile.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19928D90171C484100A96B8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Coherent Labs AD";
+			};
+			buildConfigurationList = 19928D93171C484100A96B8B /* Build configuration list for PBXProject "CoherentUIMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 19928D8F171C484100A96B8B;
+			productRefGroup = 19928D99171C484100A96B8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 017B37F2172ADA7B00379893 /* Products */;
+					ProjectRef = 017B37F1172ADA7B00379893 /* Binding.xcodeproj */;
+				},
+				{
+					ProductGroup = 19F0A9FB171D4D62002B41BD /* Products */;
+					ProjectRef = 19F0A9FA171D4D62002B41BD /* Logging_iOS.xcodeproj */;
+				},
+				{
+					ProductGroup = 19F0AA31171D50B2002B41BD /* Products */;
+					ProjectRef = 19F0AA30171D50B2002B41BD /* MemoryManagement_iOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				19928D97171C484100A96B8B /* CoherentUIMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		017B37F6172ADA7C00379893 /* libBinding.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBinding.a;
+			remoteRef = 017B37F5172ADA7C00379893 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		19F0A9FF171D4D62002B41BD /* libLogging_iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLogging_iOS.a;
+			remoteRef = 19F0A9FE171D4D62002B41BD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		19F0AA35171D50B2002B41BD /* libMemoryManagement_iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMemoryManagement_iOS.a;
+			remoteRef = 19F0AA34171D50B2002B41BD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19928D94171C484100A96B8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1924B61717205D0300175A63 /* UISystem.mm in Sources */,
+				19F0AA3E171D5FF3002B41BD /* precompiled.mm in Sources */,
+				1929925E171E98A100872498 /* ViewImpl.mm in Sources */,
+				1924B6161720590600175A63 /* DummyUnityBuild.mm in Sources */,
+				1924B6191720605300175A63 /* ManagedReferences.mm in Sources */,
+				19EDC68217268A1800D30008 /* ResourceResponseImpl.mm in Sources */,
+				017B380D172ADF9F00379893 /* BinderiOS.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		017B37F8172ADA8400379893 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Binding;
+			targetProxy = 017B37F7172ADA8400379893 /* PBXContainerItemProxy */;
+		};
+		19F0AA01171D4D6D002B41BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Logging_iOS;
+			targetProxy = 19F0AA00171D4D6D002B41BD /* PBXContainerItemProxy */;
+		};
+		19F0AA37171D50BE002B41BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MemoryManagement_iOS;
+			targetProxy = 19F0AA36171D50BE002B41BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1924B6111720563600175A63 /* Debug Unity */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					COHERENT_DOT_NET,
+					COHERENT_UNITY3D_BUILD,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = "Debug Unity";
+		};
+		1924B6121720563600175A63 /* Debug Unity */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/CoherentUIMobile.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../iOS/precompiled.h;
+				HEADER_SEARCH_PATHS = (
+					../../../../,
+					"../../../ThirdParty/boost/include/boost-1_51/",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = "Debug Unity";
+		};
+		1924B6131720564300175A63 /* Release Unity */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					COHERENT_UNITY3D_BUILD,
+					COHERENT_DOT_NET,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Unity";
+		};
+		1924B6141720564300175A63 /* Release Unity */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/CoherentUIMobile.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../iOS/precompiled.h;
+				HEADER_SEARCH_PATHS = (
+					../../../../,
+					"../../../ThirdParty/boost/include/boost-1_51/",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = "Release Unity";
+		};
+		19928DA4171C484100A96B8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		19928DA5171C484100A96B8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19928DA7171C484100A96B8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/CoherentUIMobile.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../iOS/precompiled.h;
+				HEADER_SEARCH_PATHS = (
+					../../../../,
+					"../../../ThirdParty/boost/include/boost-1_51/",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		19928DA8171C484100A96B8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/CoherentUIMobile.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../iOS/precompiled.h;
+				HEADER_SEARCH_PATHS = (
+					../../../../,
+					"../../../ThirdParty/boost/include/boost-1_51/",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19928D93171C484100A96B8B /* Build configuration list for PBXProject "CoherentUIMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19928DA4171C484100A96B8B /* Debug */,
+				1924B6111720563600175A63 /* Debug Unity */,
+				19928DA5171C484100A96B8B /* Release */,
+				1924B6131720564300175A63 /* Release Unity */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19928DA6171C484100A96B8B /* Build configuration list for PBXNativeTarget "CoherentUIMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19928DA7171C484100A96B8B /* Debug */,
+				1924B6121720563600175A63 /* Debug Unity */,
+				19928DA8171C484100A96B8B /* Release */,
+				1924B6141720564300175A63 /* Release Unity */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19928D90171C484100A96B8B /* Project object */;
+}
