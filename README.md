@@ -2,7 +2,20 @@
 
 Welcome to the Coherent UI Mobile Open Source!
 
-From this repository you can build the Coherent UI Mobile plugin for C++ and Unity3D games for Android and iOS.
+*Coherent UI* Mobile is a modern user interface middleware solution that
+allows you to integrate HTML pages built with CSS and JavaScript in your
+game with Unity3D. 
+
+Currently Unity 5.0 is not supported due to
+this bug http://fogbugz.unity3d.com/default.asp?679875_o1li58umnfjk9jhr
+
+Unity 4.6.3 is supported.
+Please note, that there is a bug in Unity 4.6.3 that gives you the following
+error when exporting iOS games:
+
+*"You are using Unity iPhone Basic. You are not allowed to remove the Unity splash screen from your game."*
+
+You can workaround it by changing the value of the *Launch Screen** key to NO in the Info.plist of the exported game.
 
 ## Gettting Started
 
