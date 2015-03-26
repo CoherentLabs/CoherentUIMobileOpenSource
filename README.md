@@ -2,32 +2,36 @@
 
 Welcome to the Coherent UI Mobile Open Source!
 
-*Coherent UI* Mobile is a modern user interface middleware solution that
+*Coherent UI* Mobile is a modern user interface middleware that
 allows you to integrate HTML pages built with CSS and JavaScript in your
-game with Unity3D. 
+game. This is achieved via the UIWebView on iOS and Android's WebView.
 
-Currently Unity 5.0 is not supported due to
-this bug http://fogbugz.unity3d.com/default.asp?679875_o1li58umnfjk9jhr
+This repository contains all the required files to build the mobile plugin from the
+source. The built binaries are compatible with Coherent UI 1.x Mobile.
+For building the plugin see [Building the Plugin section](Documentation/02_GettingStarted.md)
 
-Unity 4.6.3 is supported.
-Please note, that there is a bug in Unity 4.6.3 that gives you the following
-error when exporting iOS games:
+**Note:** If you don't have Coherent UI 1.x Mobile, you will not have preview of the
+UI in the Editor.
 
-*"You are using Unity iPhone Basic. You are not allowed to remove the Unity splash screen from your game."*
-
-You can workaround it by changing the value of the *Launch Screen** key to NO in the Info.plist of the exported game.
-
-## Gettting Started
-
-For building run the Build.py script.
-
-Built binaries are compatible with Coherent UI 1.x Mobile
-
-### Requirements 
+## Requirements
 
 * The Unity3D plugin supports Unity3D 4.6.3 on Windows and Mac OS X
+
+	Please note there is a bug in Unity 4.6.3 that gives you the following
+	error when exporting iOS games:
+
+	*"You are using Unity iPhone Basic. You are not allowed to remove the Unity
+	splash screen from your game."*
+	You can workaround it by removing the key
+	**UILaunchStoryboardName~iphone** in the Info.plist of the exported game.
+
+	Currently Unity 5.0 is not supported due to
+	this bug http://fogbugz.unity3d.com/default.asp?679875_o1li58umnfjk9jhr
+
 * Supports Android target version 4.0 or later
-* Supports iOS target version 5.0 latear
+* Supports iOS target version 5.0 later
+
+For complete list of requirements, please refer to the [Prerequisites section](Documentation/02_GettingStarted.md)
 
 ## License
 
