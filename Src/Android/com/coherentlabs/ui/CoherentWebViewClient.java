@@ -30,12 +30,25 @@ public class CoherentWebViewClient extends WebViewClient {
 			Log.v(LOG_TAG, "Overriding URL loading of \"" + url + "\" for view " + view.getId());
 			return true;
 		} else {
+			// Workaround for Android 5+, because WebView 47+ does not call onLoadResource like the previous versions did.
+			// We could (or even should) be checking the WebView-Version here, but I didn't find a nice way to do that.
+			if (android.os.Build.VERSION.SDK_INT >= 21){
+				loadResourceDirect(view, url);
+			}
+			
 			return false;
 		}
 	}
 
 	@Override
 	public void onLoadResource(WebView view, String url) {
+	
+		if (android.os.Build.VERSION.SDK_INT < 21){
+			loadResourceDirect(view, url);
+		}
+	}
+	
+	private void loadResourceDirect(WebView view, String url){
 		if (url != null && url.startsWith("coherent-js")) {
 			triggerNativeCode(view.getId(), url);
 		}
