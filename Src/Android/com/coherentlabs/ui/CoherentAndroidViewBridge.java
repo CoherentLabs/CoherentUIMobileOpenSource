@@ -30,6 +30,8 @@ public class CoherentAndroidViewBridge {
 
 	private Activity mActivity;
 	private WebView mWebView;
+	private CoherentWebViewClient mClient;
+	private CoherentAndroidViewBridge mBridge;
 	private boolean mIsTransparent;
 
 	public CoherentAndroidViewBridge(Activity activity) {
@@ -37,6 +39,7 @@ public class CoherentAndroidViewBridge {
 			Log.wtf(LOG_TAG, "Trying to create Coherent UI View with null activity!");
 		}
 
+		mBridge = this;
 		mActivity = activity;
 	}
 
@@ -165,10 +168,11 @@ public class CoherentAndroidViewBridge {
 				}
 
 				// WebViewClient must be set BEFORE calling loadUrl!
-				mWebView.setWebViewClient(new CoherentWebViewClient(mActivity, usesDefaultFileHandler));
+				mClient = new CoherentWebViewClient(mActivity, usesDefaultFileHandler);
+				mWebView.setWebViewClient(mClient);
 				mWebView.setWebChromeClient(new CoherentWebChromeClient());
 
-				mWebView.addJavascriptInterface(new CoherentJavaScriptInterface(mWebView), CoherentJavaScriptInterface.INTERFACE_NAME);
+				mWebView.addJavascriptInterface(new CoherentJavaScriptInterface(mWebView, mBridge), CoherentJavaScriptInterface.INTERFACE_NAME);
 
 				if (width != 0 && height != 0) {
 					mActivity.addContentView(mWebView,
@@ -366,6 +370,10 @@ public class CoherentAndroidViewBridge {
 				mWebView.setLayoutParams(params);
 			}
 		});
+	}
+	
+	public CoherentWebViewClient getWebViewClient(){
+		return mClient;
 	}
 
 	private native void notifySoftKeyboardVisible(boolean visible);
