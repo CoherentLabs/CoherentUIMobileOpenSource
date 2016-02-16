@@ -238,22 +238,20 @@
 
 		return promise;
 	};
-
+	
 	var simpleEvent;
 
 	if(window.__couiAndroid == undefined) {
 		simpleEvent = function (type) {
-			return function () {			
+			return function () {
 				var prefix = ['coherent-js', type],
 					frame = document.createElement('iframe');
 				prefix.push.apply(prefix, arguments);
 				frame.src = prefix.join(':');
 				frame.width = '1px';
 				frame.height = '1px';
-				frame.style.display = 'none';
 				document.documentElement.appendChild(frame);
-				window.setTimeout(function(){frame.parentNode.removeChild(frame)}, 2000);
-
+				frame.parentNode.removeChild(frame);
 			};
 		};
 	}else{
@@ -264,10 +262,8 @@
 				__couiAndroid.triggerNativeCode(prefix.join(':'));
 			};
 		};
-	
-	
 	}
-	
+
 	if (engine === undefined)
 	{
 		if (window.__couiAndroid !== undefined && window.__couiAndroid.initCoui !== undefined)
@@ -282,7 +278,7 @@
 		{
 			simpleEvent('q')();
 		}
-
+		
 		engine = window.engine;
 	}
 
@@ -402,28 +398,23 @@
 			createSendMessage = function () {
 				var prefix = 'coherent-js:c:';
 				return function () {
-					var frame = document.createElement('iframe');
 					var json = JSON.stringify(toArray.call(arguments, 2));
 					frame.src = prefix + arguments[0] + ':' + arguments[1] + ':' + encodeURIComponent(json);
 					frame.width = '1px';
 					frame.height = '1px';
-					frame.style.display = 'none';
 					document.documentElement.appendChild(frame);
-					window.setTimeout(function(){frame.parentNode.removeChild(frame)}, 2000);
+					frame.parentNode.removeChild(frame);
 				};
 			};
-			
 			createTriggerEvent = function () {
 				var prefix = 'coherent-js:e:';
 				return function () {
-					var frame = document.createElement('iframe');
 					var json = JSON.stringify(toArray.call(arguments, 1));
 					frame.src = prefix + arguments[0] + ':' + encodeURIComponent(json);
 					frame.width = '1px';
 					frame.height = '1px';
-					frame.style.display = 'none';
 					document.documentElement.appendChild(frame);
-					window.setTimeout(function(){frame.parentNode.removeChild(frame)}, 2000);
+					frame.parentNode.removeChild(frame);
 				};
 			};
 
@@ -444,7 +435,6 @@
 				};
 			};
 		}
-		
 		engine.SendMessage = createSendMessage();
 		engine.TriggerEvent = createTriggerEvent();
 
@@ -455,7 +445,7 @@
 		};
 
 		var unload = simpleEvent('u');
-		var unloadEvent = ((window.__couiAndroid === undefined) ? 'unload' : 'beforeunload');
+		var unloadEvent = ((window.__couiAndroid === undefined) ? 'pagehide' : 'beforeunload');
 		window.addEventListener(unloadEvent, unload);
 
 		engine.__observeLifetime = function () {
@@ -492,12 +482,14 @@
 
 	engine._Result = function (requestId) {
 		var deferred = engine._ActiveRequests[requestId];
+		if (deferred !== undefined)
+		{
+			delete engine._ActiveRequests[requestId];
 
-		delete engine._ActiveRequests[requestId];
-
-		var resultArguments = Array.prototype.slice.call(arguments);
-		resultArguments.shift();
-		deferred.resolve.apply(deferred, resultArguments);
+			var resultArguments = Array.prototype.slice.call(arguments);
+			resultArguments.shift();
+			deferred.resolve.apply(deferred, resultArguments);
+		}
 	};
 
 	engine._Errors = [ 'Success', 'ArgumentType', 'NoSuchMethod', 'NoResult' ];
@@ -648,7 +640,7 @@
 				{
 					// Input state: Take none
 					event.preventDefault();
-
+					
 					var touches = event.changedTouches;
 					for (var i = 0; i < touches.length; ++i) {
 						window.__couiAndroid.addTouchEvent(Number(touches[i].identifier), phase, touches[i].screenX, touches[i].screenY);
@@ -667,20 +659,20 @@
 				}
 			};
 		};
-
+		
 		var setupCoherentForAndroidFunc = function() {
 			document.body.addEventListener('touchstart', touchListener(0));
 			document.body.addEventListener('touchend', touchListener(3));
 			document.body.addEventListener('touchcancel', touchListener(4));
 			document.body.addEventListener('touchmove', touchListener(1));
-
+			
 			var newdiv = document.createElement('div');
 			newdiv.setAttribute('id', '__CoherentBackground');
 			newdiv.setAttribute('class', 'coui-noinput');
 			newdiv.setAttribute('style', 'background-color: "rgba(0,0,0,0)";' +
 				'width: 100%; height: 100%; position: absolute;' +
 				'z-index: -1000000;');
-
+			
 			document.body.insertBefore(newdiv, document.body.firstChild);
 		};
 
@@ -690,7 +682,7 @@
 			document.addEventListener('DOMContentLoaded',
 				setupCoherentForAndroidFunc);
 		}
-	}
+	}	
 
 	if (hasOnLoad) {
 		global.onload = (function (originalWindowLoaded) {
