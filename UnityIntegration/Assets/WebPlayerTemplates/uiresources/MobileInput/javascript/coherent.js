@@ -396,8 +396,10 @@
 		var createTriggerEvent;
 		
 		if(window.__couiAndroid == undefined) {
-
-			 createSendMessage = function () {
+		
+			var frame = document.createElement('iframe');
+			
+			createSendMessage = function () {
 				var prefix = 'coherent-js:c:';
 				return function () {
 					var frame = document.createElement('iframe');
@@ -434,7 +436,7 @@
 				};
 			};
 			
-			 createTriggerEvent = function () {
+			createTriggerEvent = function () {
 				var prefix = 'coherent-js:e:';
 				return function () {
 					var json = JSON.stringify(toArray.call(arguments, 1));
