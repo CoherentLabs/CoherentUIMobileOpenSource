@@ -238,19 +238,31 @@
 
 		return promise;
 	};
+	
+	var simpleEvent;
 
-	var simpleEvent = function (type) {
-		return function () {
-			var prefix = ['coherent-js', type],
-				frame = document.createElement('iframe');
-			prefix.push.apply(prefix, arguments);
-			frame.src = prefix.join(':');
-			frame.width = '1px';
-			frame.height = '1px';
-			document.documentElement.appendChild(frame);
-			frame.parentNode.removeChild(frame);
+	if (window.__couiAndroid == undefined) {
+		simpleEvent = function (type) {
+			return function () {
+				var prefix = ['coherent-js', type],
+					frame = document.createElement('iframe');
+				prefix.push.apply(prefix, arguments);
+				frame.src = prefix.join(':');
+				frame.width = '1px';
+				frame.height = '1px';
+				document.documentElement.appendChild(frame);
+				frame.parentNode.removeChild(frame);
+			};
 		};
-	};
+	} else {
+			simpleEvent = function (type) {
+			return function () {
+				var prefix = ['coherent-js', type];
+				prefix.push.apply(prefix, arguments);
+				__couiAndroid.triggerNativeCode(prefix.join(':'));
+			};
+		};
+	}
 
 	if (engine === undefined)
 	{
@@ -376,30 +388,53 @@
 			};
 		}
 
-		var frame = document.createElement('iframe');
+		var createSendMessage;
+		var createTriggerEvent;
+		
+		if (window.__couiAndroid == undefined) {
+		
+			var frame = document.createElement('iframe');
+			
+			createSendMessage = function () {
+				var prefix = 'coherent-js:c:';
+				return function () {
+					var json = JSON.stringify(toArray.call(arguments, 2));
+					frame.src = prefix + arguments[0] + ':' + arguments[1] + ':' + encodeURIComponent(json);
+					frame.width = '1px';
+					frame.height = '1px';
+					document.documentElement.appendChild(frame);
+					frame.parentNode.removeChild(frame);
+				};
+			};
+			createTriggerEvent = function () {
+				var prefix = 'coherent-js:e:';
+				return function () {
+					var json = JSON.stringify(toArray.call(arguments, 1));
+					frame.src = prefix + arguments[0] + ':' + encodeURIComponent(json);
+					frame.width = '1px';
+					frame.height = '1px';
+					document.documentElement.appendChild(frame);
+					frame.parentNode.removeChild(frame);
+				};
+			};
 
-		var createSendMessage = function () {
-			var prefix = 'coherent-js:c:';
-			return function () {
-				var json = JSON.stringify(toArray.call(arguments, 2));
-				frame.src = prefix + arguments[0] + ':' + arguments[1] + ':' + encodeURIComponent(json);
-				frame.width = '1px';
-				frame.height = '1px';
-				document.documentElement.appendChild(frame);
-				frame.parentNode.removeChild(frame);
+		} else {
+			createSendMessage = function () {
+				var prefix = 'coherent-js:c:';
+				return function () {
+					var json = JSON.stringify(toArray.call(arguments, 2));
+					__couiAndroid.triggerNativeCode(prefix + arguments[0] + ':' + arguments[1] + ':' + encodeURIComponent(json));
+				};
 			};
-		};
-		var createTriggerEvent = function () {
-			var prefix = 'coherent-js:e:';
-			return function () {
-				var json = JSON.stringify(toArray.call(arguments, 1));
-				frame.src = prefix + arguments[0] + ':' + encodeURIComponent(json);
-				frame.width = '1px';
-				frame.height = '1px';
-				document.documentElement.appendChild(frame);
-				frame.parentNode.removeChild(frame);
+			
+			createTriggerEvent = function () {
+				var prefix = 'coherent-js:e:';
+				return function () {
+					var json = JSON.stringify(toArray.call(arguments, 1));
+					__couiAndroid.triggerNativeCode(prefix + arguments[0] + ':' + encodeURIComponent(json));
+				};
 			};
-		};
+		}
 		engine.SendMessage = createSendMessage();
 		engine.TriggerEvent = createTriggerEvent();
 

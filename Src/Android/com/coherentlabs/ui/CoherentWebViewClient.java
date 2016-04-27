@@ -29,7 +29,7 @@ public class CoherentWebViewClient extends WebViewClient {
 		if (url != null && !shouldStartLoad(view.getId(), url)) {
 			Log.v(LOG_TAG, "Overriding URL loading of \"" + url + "\" for view " + view.getId());
 			return true;
-		} else {
+		} else {			
 			return false;
 		}
 	}
