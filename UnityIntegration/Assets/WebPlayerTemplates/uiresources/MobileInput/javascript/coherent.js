@@ -241,7 +241,7 @@
 	
 	var simpleEvent;
 
-	if(window.__couiAndroid == undefined) {
+	if (window.__couiAndroid == undefined) {
 		simpleEvent = function (type) {
 			return function () {
 				var prefix = ['coherent-js', type],
@@ -254,7 +254,7 @@
 				frame.parentNode.removeChild(frame);
 			};
 		};
-	}else{
+	} else {
 			simpleEvent = function (type) {
 			return function () {
 				var prefix = ['coherent-js', type];
@@ -391,7 +391,7 @@
 		var createSendMessage;
 		var createTriggerEvent;
 		
-		if(window.__couiAndroid == undefined) {
+		if (window.__couiAndroid == undefined) {
 		
 			var frame = document.createElement('iframe');
 			
@@ -418,7 +418,7 @@
 				};
 			};
 
-		}else{
+		} else {
 			createSendMessage = function () {
 				var prefix = 'coherent-js:c:';
 				return function () {
